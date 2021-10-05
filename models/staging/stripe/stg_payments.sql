@@ -4,7 +4,7 @@ with payments as (
         orderid,
         paymentmethod,
         status,
-        amount
+        {{ cents_to_dollars('amount') }} as amount
     from raw.stripe.payment
 )
 
